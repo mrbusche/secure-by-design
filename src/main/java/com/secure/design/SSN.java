@@ -5,9 +5,6 @@ import static org.apache.commons.lang3.Validate.notNull;
 
 public class SSN {
     private final String ssn;
-    private final int minLength = 3;
-    private final int maxLength = 20;
-    private final String regEx = "^[a-zA-Z0-9._-]{3,}$";
 
     SSN(final String ssn) {
         notNull(ssn, "ssn cannot be null");
