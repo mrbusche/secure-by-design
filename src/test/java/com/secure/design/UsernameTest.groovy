@@ -88,17 +88,17 @@ class UsernameTest extends Specification {
         e.message == errorMessage
         username == null
         where:
-        input        | errorMessage
-        'ab@'        | 'username can only contain letters, numbers, -, _ and .'
-        'ab#'        | 'username can only contain letters, numbers, -, _ and .'
-        'a1$'        | 'username can only contain letters, numbers, -, _ and .'
-        'a2%'        | 'username can only contain letters, numbers, -, _ and .'
-        'a4('        | 'username can only contain letters, numbers, -, _ and .'
-        'a5)'        | 'username can only contain letters, numbers, -, _ and .'
-        'a6!'        | 'username can only contain letters, numbers, -, _ and .'
-        'a123#'      | 'username can only contain letters, numbers, -, _ and .'
-        'akljdad&'   | 'username can only contain letters, numbers, -, _ and .'
-        'a7^'        | 'username can only contain letters, numbers, -, _ and .'
+        input      | errorMessage
+        'ab@'      | 'username can only contain letters, numbers, -, _ and .'
+        'ab#'      | 'username can only contain letters, numbers, -, _ and .'
+        'a1$'      | 'username can only contain letters, numbers, -, _ and .'
+        'a2%'      | 'username can only contain letters, numbers, -, _ and .'
+        'a4('      | 'username can only contain letters, numbers, -, _ and .'
+        'a5)'      | 'username can only contain letters, numbers, -, _ and .'
+        'a6!'      | 'username can only contain letters, numbers, -, _ and .'
+        'a123#'    | 'username can only contain letters, numbers, -, _ and .'
+        'akljdad&' | 'username can only contain letters, numbers, -, _ and .'
+        'a7^'      | 'username can only contain letters, numbers, -, _ and .'
     }
 
 }

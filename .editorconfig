@@ -1,0 +1,10 @@
+root = true
+
+[*.{groovy,java}]
+charset = utf-8
+
+[*.{groovy,java}]
+indent_style = space
+indent_size = 4
+continuation_indent_size = 8
+end_of_line = lf
