@@ -11,9 +11,9 @@ import static junit.framework.TestCase.assertTrue;
 @SpringBootTest
 public class DemoApplicationTests {
 
-	@Test
-	public void contextLoads() {
-		assertTrue(true);
-	}
+    @Test
+    public void contextLoads() {
+        assertTrue(true);
+    }
 
 }
