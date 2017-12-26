@@ -1,6 +1,7 @@
 package com.secure.design.usaddress
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class Zip4Test extends Specification {
 
@@ -11,5 +12,36 @@ class Zip4Test extends Specification {
         def e = thrown(NullPointerException)
         e.message == 'zip4 cannot be null'
         zip4 == null
+    }
+
+    @Unroll
+    def "check zip4 exactly 5 numeric characters #input"() {
+        when:
+        Zip4 zip4
+        zip4 = new Zip4(input)
+        then:
+        IllegalArgumentException e = thrown(IllegalArgumentException)
+        e.message == errorMessage
+        zip4 == null
+        where:
+        input    | errorMessage
+        '1234'   | 'zip4 must be 5 digits'
+        '123456' | 'zip4 must be 5 digits'
+        'abcd'   | 'zip4 must be 5 digits'
+        'abcde'  | 'zip4 must be 5 digits'
+        'abcdef' | 'zip4 must be 5 digits'
+    }
+
+    @Unroll
+    def "check can set zip4 #input"() {
+        when:
+        Zip4 zip4 = new Zip4(input)
+        then:
+        zip4.zip4 == input
+        where:
+        input   | blank
+        '12345' | ''
+        '23456' | ''
+        '85902' | ''
     }
 }
