@@ -15,7 +15,7 @@ class Zip4Test extends Specification {
     }
 
     @Unroll
-    def "check zip4 exactly 5 numeric characters #input"() {
+    def "check zip4 exactly 4 numeric characters #input"() {
         when:
         Zip4 zip4
         zip4 = new Zip4(input)
@@ -24,12 +24,12 @@ class Zip4Test extends Specification {
         e.message == errorMessage
         zip4 == null
         where:
-        input    | errorMessage
-        '1234'   | 'zip4 must be 5 digits'
-        '123456' | 'zip4 must be 5 digits'
-        'abcd'   | 'zip4 must be 5 digits'
-        'abcde'  | 'zip4 must be 5 digits'
-        'abcdef' | 'zip4 must be 5 digits'
+        input   | errorMessage
+        '123'   | 'zip4 must be 4 digits'
+        '12345' | 'zip4 must be 4 digits'
+        'abc'   | 'zip4 must be 4 digits'
+        'abcd'  | 'zip4 must be 4 digits'
+        'abcde' | 'zip4 must be 4 digits'
     }
 
     @Unroll
@@ -39,9 +39,9 @@ class Zip4Test extends Specification {
         then:
         zip4.zip4 == input
         where:
-        input   | blank
-        '12345' | ''
-        '23456' | ''
-        '85902' | ''
+        input  | blank
+        '1234' | ''
+        '2345' | ''
+        '8590' | ''
     }
 }
