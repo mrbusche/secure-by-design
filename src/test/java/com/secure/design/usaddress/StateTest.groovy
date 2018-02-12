@@ -15,7 +15,7 @@ class StateTest extends Specification {
     }
 
     @Unroll
-    def "check changes button access #userType #change #producerType"() {
+    def "check state exactly 2 alpha characters #input"() {
         when:
         State state = new State(input)
         then:
@@ -23,25 +23,16 @@ class StateTest extends Specification {
         e.message == errorMessage
         state == null
         where:
-        userType | changes | producerType | showButton
-        'INQ'    | true    | 'EAFSS'      | false
-        'INQ'    | true    | 'something'  | false
-        'INQ'    | false   | 'EAFSS'      | false
-        'INQ'    | false   | 'something'  | false
-        'GLB'    | true    | 'EAFSS'      | false
-        'GLB'    | true    | 'something'  | false
-        'GLB'    | false   | 'EAFSS'      | false
-        'GLB'    | false   | 'something'  | false
-
-        'CMG'    | true    | 'EAFSS'      | true //which one should be true?
-        'CMG'    | false   | 'EAFSS'      | false //which one should be true?
-        'CMG'    | true    | 'something'  | true
-        'CMG'    | false   | 'something'  | true
-
-        'ADM'    | true    | 'EAFSS'      | true
-        'ADM'    | true    | 'something'  | true
-        'ADM'    | false   | 'EAFSS'      | true
-        'ADM'    | false   | 'something'  | true
+        input       | errorMessage
+        '12345678a' | 'state must be a valid state abbreviation'
+        '12345678b' | 'state must be a valid state abbreviation'
+        'abcdefgh0' | 'state must be a valid state abbreviation'
+        'abcdefghi' | 'state must be a valid state abbreviation'
+        'aa'        | 'state must be a valid state abbreviation'
+        'AA'        | 'state must be a valid state abbreviation'
+        'Bc'        | 'state must be a valid state abbreviation'
+        'ar'        | 'state must be a valid state abbreviation'
+        'wy'        | 'state must be a valid state abbreviation'
     }
 
     @Unroll
