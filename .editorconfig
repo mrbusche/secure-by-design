@@ -1,10 +1,9 @@
 root = true
 
-[*.{groovy,java}]
+[*.{groovy,java,jsp,html}]
 charset = utf-8
-
-[*.{groovy,java}]
 indent_style = space
 indent_size = 4
-continuation_indent_size = 8
 end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
