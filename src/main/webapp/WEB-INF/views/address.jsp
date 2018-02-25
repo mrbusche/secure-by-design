@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +11,15 @@
 <body>
     <div class="container">
         <h1>Address page</h1>
-        <form class="navbar-form navbar-left" action="saveAddress">
+        <form:form class="navbar-form navbar-left" action="saveAddress" method="post">
             <div class="row">
                 <div class="form-group">
-                    <input type="text" name="address1" class="form-control col-xs-4" placeholder="Address Line 1">
+                    <input type="text" name="streetAddress1" class="form-control col-xs-4" placeholder="Address Line 1">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group">
-                    <input type="text" name="address2" class="form-control col-xs-4" placeholder="Address Line 2">
+                    <input type="text" name="streetAddress2" class="form-control col-xs-4" placeholder="Address Line 2">
                 </div>
             </div>
             <div class="row">
@@ -44,7 +45,7 @@
             <div class="row">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
-        </form>
+        </form:form>
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

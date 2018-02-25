@@ -12,7 +12,7 @@ public class State {
         "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"));
     private final String state;
 
-    State(final String state) {
+    public State(final String state) {
         notNull(state, "state cannot be null");
         isTrue(state.length() == 2, "state must be a valid state abbreviation");
         isTrue(stateList.contains(state), "state must be a valid state abbreviation");
