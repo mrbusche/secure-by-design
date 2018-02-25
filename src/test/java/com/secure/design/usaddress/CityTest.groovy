@@ -15,6 +15,21 @@ class CityTest extends Specification {
     }
 
     @Unroll
+    def "check street address1 isn't blank #input"() {
+        when:
+        City city = new City(input)
+        then:
+        IllegalArgumentException e = thrown(IllegalArgumentException)
+        e.message == errorMessage
+        city == null
+        where:
+        input | errorMessage
+        ' '   | 'city cannot be blank'
+        '   ' | 'city cannot be blank'
+        ''    | 'city cannot be blank'
+    }
+
+    @Unroll
     def "check city is valid #input"() {
         when:
         City city = new City(input)
