@@ -34,12 +34,12 @@
             </div>
             <div class="row">
                 <div class="form-group">
-                    <input type="text" name="zip1" class="form-control col-xs-2" placeholder="Zip 5">
+                    <input type="text" name="zip5" class="form-control col-xs-2" placeholder="Zip 5" maxlength="5">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group">
-                    <input type="text" name="zip2" class="form-control col-xs-2" placeholder="Zip 4">
+                    <input type="text" name="zip4" class="form-control col-xs-2" placeholder="Zip 4" maxlength="4">
                 </div>
             </div>
             <div class="row">
