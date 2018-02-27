@@ -23,12 +23,15 @@ class AddressController {
                                     @ModelAttribute("state") String state,
                                     @ModelAttribute("zip5") String zip5,
                                     @ModelAttribute("zip4") String zip4) {
+        ModelAndView mav = new ModelAndView();
         try {
             USAddress usAddress = new USAddress(new StreetAddress1(address1), new StreetAddress2(address2), new City(city), new State(state), new Zip5(zip5), new Zip4(zip4));
             return new ModelAndView("address");
         } catch (IllegalArgumentException iae) {
             System.out.println(iae);
-            return new ModelAndView("address");
+            mav.setViewName("address");
+            mav.addObject("error", "invalid stuff");
+            return mav;
         }
     }
 }
